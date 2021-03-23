@@ -2,8 +2,10 @@ package com.fakhri.service.implementation;
 
 import com.fakhri.domain.Account;
 import com.fakhri.repository.AccountRepository;
+import com.fakhri.repository.implementation.AccountRepositoryImpl;
 import com.fakhri.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -34,7 +36,10 @@ public class AccountServiceImpl implements AccountService {
         return accountRepository;
     }
 
+    // Menggunakan Autowired Injection
     @Autowired
+    // Untuk mengkualifikasi target autowired
+    @Qualifier(value = "accountRepositoryImpl")
     public void setAccountRepository(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }

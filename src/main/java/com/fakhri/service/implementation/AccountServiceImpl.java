@@ -36,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
         return accountRepository;
     }
 
-    // Menggunakan Autowired Injection
+    // Menggunakan bean Autowired
     @Autowired
     // Untuk mengkualifikasi target autowired
     @Qualifier(value = "accountRepositoryImpl")
